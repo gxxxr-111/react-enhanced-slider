@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useRef, useCallback, ChangeEvent, useEffect } from 'react';
 
 interface Range {
@@ -83,13 +85,18 @@ const StepSlider: React.FC<StepSliderProps> = ({
 
     const handleMouseDown = useCallback((e: React.MouseEvent | React.TouchEvent) => {
         e.preventDefault();
+
         const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
         const newValue = calculateValue(clientX);
         updateValue(newValue);
 
-        const handleMove = (moveEvent: MouseEvent | TouchEvent) => {
-            const moveClientX = moveEvent instanceof TouchEvent ?
-                moveEvent.touches[0].clientX : moveEvent.clientX;
+        const handleMove = (moveEvent: Event) => {
+            const event = moveEvent as unknown as MouseEvent | TouchEvent;
+
+            const moveClientX = 'touches' in event ?
+                event.touches[0].clientX :
+                (event as MouseEvent).clientX;
+
             const moveValue = calculateValue(moveClientX);
             updateValue(moveValue);
         };
@@ -179,7 +186,7 @@ const StepSlider: React.FC<StepSliderProps> = ({
             >
 
                 <div
-                    className="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500 shadow-md transform-gpu transition-transform duration-200 ease-in-out group-hover:scale-[3]"
+                    className="absolute top-1/2 left-1/2 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500 shadow-md transition-transform duration-200 ease-in-out group-hover:scale-[3]"
                 />
             </div>
 
