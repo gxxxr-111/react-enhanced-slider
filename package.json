@@ -19,5 +19,14 @@
   },
   "devDependencies": {
     "@types/node": "22.13.5"
-  }
+  },
+  "keywords": [
+    "react",
+    "slider",
+    "range-slider",
+    "step-slider",
+    "animated-slider",
+    "customizable-slider",
+    "ui-components"
+  ]
 }
