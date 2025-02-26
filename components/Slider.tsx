@@ -1,26 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useCallback, ChangeEvent, useEffect } from 'react';
-
-interface Range {
-    min: number
-    max: number
-    step: number
-}
-
-function correctNumber(rawValue: number, { min, max, step }: Range) {
-    const precision = step.toString().split('.')[1]?.length || 0;
-    const factor = Math.pow(10, precision);
-
-    const steps = Math.round((rawValue - min) / step);
-    let adjusted = min + steps * step;
-
-    adjusted = Math.round(adjusted * factor) / factor;
-
-    const clamped = Math.min(max, Math.max(min, adjusted));
-
-    return Number(clamped.toFixed(precision));
-}
+import { correctNumber, Range } from './Range'
 
 interface StepSliderProps {
     range?: Range
@@ -39,7 +20,7 @@ const StepSlider: React.FC<StepSliderProps> = ({
     className,
     showBar = false,
 }) => {
-    const { min, max, step } = range; // Rename for simplicity
+    const { min, max, step } = range;
 
     const [internalValue, setInternalValue] = useState<number>(defaultValue);
 
