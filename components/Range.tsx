@@ -4,18 +4,28 @@ export interface Range {
     step: number
 }
 
-function v2p(val: number, { min, max }: Range) {
+export function v2p(val: number, { min, max }: Range) {
+
+    // For updating the display
+
     // value -> percentage
     // |min|-----|val|-----------|max|
-    return (val - min) / (max - min);
+
+    return (val - min) / (max - min) * 100;
 }
 
-function p2v(percentage: number, { min, max }: Range) {
-    // percentage to value
-    return percentage * (max - min) + min;
+export function p2v(percentage: number, { min, max }: Range) {
+
+    // For updating the value
+
+    // percentage -> value
+
+    return percentage * (max - min) / 100 + min;
 }
 
 export function correctNumber(rawValue: number, { min, max, step }: Range) {
+    if (step > max - min) return min;
+
     const precision = step.toString().split('.')[1]?.length || 0;
     const factor = Math.pow(10, precision);
 
