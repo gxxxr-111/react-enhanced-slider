@@ -1,20 +1,11 @@
-<style>
-  .round {
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
-  }
-</style>
-
 <h1 align="center">🎚️ React Enhanced Slider</h1>
 
 <p align="center">
   <strong>Modern React slider component with step controls, smooth animations, and full customization</strong>
 </p>
 
-
 <p align="center">
-  <img src="slider-demo.png" alt="Demo Preview" width="600" class="round"/>
+  <img src="slider-demo.png" alt="Demo Preview" width="600" style="border-radius: 10px; display: block; margin: 0 auto;"/>
 </p>
 
 ---
@@ -29,8 +20,17 @@
 
 ---
 
-<!-- 🚀 **Quick Start**
+🚀 **Quick Start**
+
 ```bash
-npm install react-enhanced-slider
-# or
-yarn add react-enhanced-slider -->
+# Clone the repository
+git clone git@github.com:gxxxr-111/react-enhanced-slider.git
+
+# Navigate into the project folder
+cd react-enhanced-slider
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
