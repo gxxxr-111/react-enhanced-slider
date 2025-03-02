@@ -6,3 +6,29 @@ __tests__
 docs
 coverage
 stories
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# TypeScript configuration
+tsconfig.json
+
+# Rollup configuration
+webpack.config.js
+rollup.config.js
+vite.config.ts
+
+# Lint configuration
+.eslintrc
+.prettierrc
+
+# Tools configuration
+babel.config.js
+jest.config.js
+vitest.config.ts
+
+build-storybook.log
+chromatic.config.json
+next-env.d.ts
