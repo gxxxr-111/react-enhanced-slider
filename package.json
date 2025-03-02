@@ -56,5 +56,6 @@
     "animated-slider",
     "customizable-slider",
     "ui-components"
-  ]
+  ],
+  "version": "1.0.0"
 }
