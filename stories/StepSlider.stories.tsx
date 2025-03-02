@@ -1,18 +1,17 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import StepSlider from '../components/Slider';
-// import React from 'react';
+import { Slider } from '../src';
 
-const meta: Meta<typeof StepSlider> = {
+const meta: Meta<typeof Slider> = {
     title: 'Components/StepSlider',
-    component: StepSlider,
+    component: Slider,
     parameters: {
         layout: 'centered'
     }
 };
 
 export default meta;
-type Story = StoryObj<typeof StepSlider>;
+type Story = StoryObj<typeof Slider>;
 
 export const Default: Story = {
     args: {

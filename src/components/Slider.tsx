@@ -1,5 +1,3 @@
-"use client";
-
 import React, { useState, useRef, useCallback, ChangeEvent, useEffect } from 'react';
 import { Range, v2p, p2v, correctNumber } from './Range';
 
@@ -16,7 +14,7 @@ interface StepSliderProps {
     barColor?: string
 }
 
-const StepSlider: React.FC<StepSliderProps> = ({
+export const Slider: React.FC<StepSliderProps> = ({
     range = { min: 0, max: 100, step: 1 },
     defaultValue = correctNumber((range.min + range.max) / 2, range),
     onChange,
@@ -204,5 +202,3 @@ const StepSlider: React.FC<StepSliderProps> = ({
         </div >
     );
 };
-
-export default StepSlider;

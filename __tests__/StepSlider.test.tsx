@@ -1,17 +1,17 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import StepSlider from '../components/Slider';
+import { Slider } from '../src';
 import React from 'react';
 
 describe('StepSlider', () => {
     test('Render initial value correctly', () => {
-        render(<StepSlider range={{ min: 0, max: 100, step: 10 }} />);
+        render(<Slider range={{ min: 0, max: 100, step: 10 }} />);
         const input = screen.getByRole('spinbutton') as HTMLInputElement;
         expect(input.value).toBe('50');
     });
 
     test('Drag the thumb to change value', async () => {
         const handleChange = jest.fn();
-        render(<StepSlider onChange={handleChange} />);
+        render(<Slider onChange={handleChange} />);
 
         const slider = screen.getByRole('slider');
         fireEvent.mouseDown(slider, { clientX: 100 });

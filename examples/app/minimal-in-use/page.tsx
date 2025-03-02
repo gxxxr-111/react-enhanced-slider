@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import StepSlider from "../../components/Slider";
+import { Slider } from "../../../src/components";
 
 function Home() {
 
@@ -12,7 +12,7 @@ function Home() {
 
             <div>Value: {value}</div>
 
-            <StepSlider
+            <Slider
                 range={{ min: -100, max: 100, step: 100 }}
                 value={value}
                 onChange={setValue}

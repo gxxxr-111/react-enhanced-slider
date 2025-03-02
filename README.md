@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="slider-demo.png" alt="Demo Preview" width="600" style="border-radius: 10px; display: block; margin: 0 auto;"/>
+  <img src="./docs/assets/slider-demo.png" alt="Demo Preview" width="600" style="border-radius: 10px; display: block; margin: 0 auto;"/>
 </p>
 
 ---

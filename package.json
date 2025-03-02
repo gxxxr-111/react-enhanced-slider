@@ -1,11 +1,32 @@
 {
+  "name": "react-enhanced-slider",
+  "version": "1.0.6",
+  "type": "module",
+  "description": "Feature-rich slider component for React with step controls, smooth animations and full customization.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gxxxr-111/react-enhanced-slider"
+  },
+  "author": {
+    "name": "Eric Gao",
+    "email": "gxr_111@sjtu.edu.cn"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gxxxr-111/react-enhanced-slider/issues/new/choose"
+  },
+  "homepage": "www.gxr111.cn",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build": "rollup -c",
+    "test": "vitest run",
+    "dev": "storybook dev",
+    "storybook": "storybook build"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.8",
@@ -23,6 +44,7 @@
     "@chromatic-com/storybook": "^3.2.5",
     "@rollup/plugin-commonjs": "^28.0.2",
     "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-strip": "^3.0.4",
     "@rollup/plugin-typescript": "^12.1.2",
     "@storybook/addon-essentials": "^8.6.3",
     "@storybook/addon-onboarding": "^8.6.3",
@@ -42,6 +64,7 @@
     "jest-axe": "^9.0.0",
     "playwright": "^1.50.1",
     "rollup": "^4.34.9",
+    "rollup-plugin-import-css": "^3.5.8",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^8.6.3",
@@ -56,21 +79,5 @@
     "animated-slider",
     "customizable-slider",
     "ui-components"
-  ],
-  "name": "react-enhanced-slider",
-  "description": "Feature-rich slider component for React with step controls, smooth animations and full customization.",
-  "version": "1.0.6",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gxxxr-111/react-enhanced-slider"
-  },
-  "author": {
-    "name": "Eric Gao",
-    "email": "gxr_111@sjtu.edu.cn"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gxxxr-111/react-enhanced-slider/issues/new/choose"
-  },
-  "homepage": "www.gxr111.cn"
+  ]
 }
