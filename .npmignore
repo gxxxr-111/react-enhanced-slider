@@ -1,4 +1,5 @@
-examples/
-stories/
-docs/
-coverage/
+.DS_Store
+.storybook
+.github
+docs
+coverage
