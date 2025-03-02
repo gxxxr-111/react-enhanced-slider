@@ -14,7 +14,7 @@ interface StepSliderProps {
     barColor?: string
 }
 
-export const Slider: React.FC<StepSliderProps> = ({
+const Slider: React.FC<StepSliderProps> = ({
     range = { min: 0, max: 100, step: 1 },
     defaultValue = correctNumber((range.min + range.max) / 2, range),
     onChange,
@@ -202,3 +202,5 @@ export const Slider: React.FC<StepSliderProps> = ({
         </div >
     );
 };
+
+export default Slider;
