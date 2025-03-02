@@ -57,6 +57,19 @@
     "customizable-slider",
     "ui-components"
   ],
+
+  "name": "react-enhanced-slider",
+  "description": "Feature-rich slider component for React with step controls, smooth animations and full customization.",
   "version": "1.0.1",
-  "name": "react-enhanced-slider"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gxxxr-111/react-enhanced-slider"},
+  "author": {
+    "name": "Eric Gao",
+    "email": "gxr_111@sjtu.edu.cn"},
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gxxxr-111/react-enhanced-slider/issues/new/choose"
+  },
+  "homepage": "www.gxr111.cn"
 }
