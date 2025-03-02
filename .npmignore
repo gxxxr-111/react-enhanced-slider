@@ -1,5 +1,8 @@
 .DS_Store
 .storybook
 .github
+.next
+__tests__
 docs
 coverage
+stories
