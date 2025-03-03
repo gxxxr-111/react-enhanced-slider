@@ -4,8 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import externals from 'rollup-plugin-node-externals';
 import { terser } from 'rollup-plugin-terser';
-import css from "rollup-plugin-import-css";
-import "./styles/globals.css";
+import postcss from 'rollup-plugin-postcss';
 
 export default {
     input: 'src/index.ts',
@@ -22,20 +21,16 @@ export default {
         },
     ],
     plugins: [
-        // 自动处理外部依赖
         externals({
             deps: true,
             devDeps: false,
             peerDeps: true,
         }),
 
-        // 解析node_modules中的模块
         resolve(),
 
-        // 将CommonJS模块转换为ES6
         commonjs(),
 
-        // 处理TypeScript
         typescript({
             tsconfig: './tsconfig.json',
             declaration: true,
@@ -44,9 +39,15 @@ export default {
             exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
         }),
 
-        css(),
+        postcss({
+            extensions: ['.css'],
+            extract: 'dist/styles.css',
+            minimize: true,
+            inject: {
+                insertInto: 'head',
+            },
+        }),
 
-        // 生产环境压缩
         process.env.NODE_ENV === 'production' && terser(),
     ],
 

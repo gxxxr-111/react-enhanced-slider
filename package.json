@@ -36,8 +36,8 @@
     "jquery": "^3.7.1",
     "next": "^15.1.7",
     "postcss": "^8.5.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-tsx": "^1.0.2",
     "tailwindcss": "^4.0.8"
