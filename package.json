@@ -16,12 +16,10 @@
     "url": "https://github.com/gxxxr-111/react-enhanced-slider/issues/new/choose"
   },
   "homepage": "www.gxr111.cn",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types/src/index.d.ts",
+  "files": ["dist"],
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "test": "vitest run",
@@ -41,6 +39,10 @@
     "rollup-plugin-dts": "^6.1.1",
     "rollup-plugin-tsx": "^1.0.2",
     "tailwindcss": "^4.0.8"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.5",
