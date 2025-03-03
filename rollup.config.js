@@ -1,4 +1,3 @@
-// rollup.config.js
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
@@ -13,14 +12,27 @@ export default {
             file: 'dist/index.cjs.js',
             format: 'cjs',
             sourcemap: true,
+            assetFileNames: 'styles/[name][extname]'
         },
         {
             file: 'dist/index.esm.js',
             format: 'esm',
             sourcemap: true,
+            assetFileNames: 'styles/[name][extname]'
         },
     ],
     plugins: [
+        postcss({
+            extract: 'styles/index.css',
+            modules: false,
+            minimize: process.env.NODE_ENV === 'production',
+            inject: false,
+            sourceMap: true,
+            config: {
+                path: './postcss.config.js'
+            }
+        }),
+
         externals({
             deps: true,
             devDeps: false,
@@ -28,7 +40,6 @@ export default {
         }),
 
         resolve(),
-
         commonjs(),
 
         typescript({
@@ -39,18 +50,6 @@ export default {
             exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
         }),
 
-        postcss({
-            extract: true,
-            modules: false,
-            minimize: process.env.NODE_ENV === 'production',
-            inject: false,
-            sourceMap: true,
-            config: {
-                path: './postcss.config.mjs'
-            }
-        }),
-
         process.env.NODE_ENV === 'production' && terser(),
     ],
-
 };

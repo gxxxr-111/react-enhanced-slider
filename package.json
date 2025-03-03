@@ -20,8 +20,16 @@
   "module": "dist/index.esm.js",
   "types": "dist/types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "styles"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.cjs.js",
+      "style": "./dist/styles/index.css"
+    }
+  },
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "test": "vitest run",
@@ -64,6 +72,7 @@
     "@vitest/browser": "^3.0.7",
     "@vitest/coverage-v8": "^3.0.7",
     "autoprefixer": "^10.4.20",
+    "cssnano": "^7.0.6",
     "jest": "^29.7.0",
     "jest-axe": "^9.0.0",
     "playwright": "^1.50.1",
