@@ -26,8 +26,11 @@
     ".": {
       "import": "./dist/index.esm.js",
       "require": "./dist/index.cjs.js",
-      "types": "./dist/types/index.d.ts",
-      "style": "./dist/index.css"
+      "types": "./dist/types/index.d.ts"
+    },
+    "./dist/index.css": {
+      "import": "./dist/index.css",
+      "require": "./dist/index.css"
     }
   },
   "scripts": {
