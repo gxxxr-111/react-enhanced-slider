@@ -1,46 +1,48 @@
-import path from 'path';
-import $ from 'jquery';
+// rollup.config.js
 import typescript from '@rollup/plugin-typescript';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import externals from 'rollup-plugin-node-externals';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-    input: 'src/index.ts',  // Input file
+    input: 'src/index.ts',
     output: [
         {
-            file: 'dist/index.cjs.js',  // Output as CommonJS format
+            file: 'dist/index.cjs.js',
             format: 'cjs',
-            sourcemap: true,  // Enable source map
-        },
-        {
-            file: 'dist/index.esm.js',  // Output as ES module format
-            format: 'esm',
-            sourcemap: true,  // Enable source map
-        },
-        {
-            file: 'dist/index.umd.js',  // Output as UMD format
-            format: 'umd',
-            name: 'Slider',  // Global variable name exposed in UMD format
             sourcemap: true,
-            plugins: [terser()],  // Minify the UMD output
-            globals: {
-                jquery: '$',  // Map jQuery to the global variable '$'
-                react: 'React',        // Map React to the global variable 'React'
-                'react-dom': 'ReactDOM', // Map ReactDOM to the global variable 'ReactDOM'
-            },
+        },
+        {
+            file: 'dist/index.esm.js',
+            format: 'esm',
+            sourcemap: true,
         },
     ],
     plugins: [
-        peerDepsExternal(),  // Automatically externalize peer dependencies
-        resolve(),  // Resolve modules in node_modules
-        commonjs(),  // Convert CommonJS modules to ES6
-        typescript({ tsconfig: './tsconfig.json' }),  // Compile TypeScript using tsconfig.json
-    ],
-    external: [
-        'react',  // Exclude React as a peer dependency
-        'react-dom', // Exclude ReactDOM as a peer dependency
-        'jquery',  // Exclude jQuery as a peer dependency
+        // 自动处理外部依赖
+        externals({
+            deps: true,
+            devDeps: false,
+            peerDeps: true,
+        }),
+
+        // 解析node_modules中的模块
+        resolve(),
+
+        // 将CommonJS模块转换为ES6
+        commonjs(),
+
+        // 处理TypeScript
+        typescript({
+            tsconfig: './tsconfig.json',
+            declaration: true,
+            declarationDir: 'dist/types',
+            rootDir: 'src',
+            exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
+        }),
+
+        // 生产环境压缩
+        process.env.NODE_ENV === 'production' && terser(),
     ],
 };
