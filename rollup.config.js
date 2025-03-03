@@ -23,7 +23,7 @@ export default {
     ],
     plugins: [
         postcss({
-            extract: 'index.css',
+            extract: 'dist/index.css',
             modules: false,
             minimize: process.env.NODE_ENV === 'production',
             inject: false,
