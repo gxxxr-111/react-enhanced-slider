@@ -4,6 +4,8 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import externals from 'rollup-plugin-node-externals';
 import { terser } from 'rollup-plugin-terser';
+import css from "rollup-plugin-import-css";
+import "./styles/globals.css";
 
 export default {
     input: 'src/index.ts',
@@ -42,7 +44,10 @@ export default {
             exclude: ['**/*.stories.tsx', '**/*.test.tsx'],
         }),
 
+        css(),
+
         // 生产环境压缩
         process.env.NODE_ENV === 'production' && terser(),
     ],
+
 };
