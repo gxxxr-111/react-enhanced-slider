@@ -43,7 +43,11 @@ export default {
             extract: true,
             modules: false,
             minimize: process.env.NODE_ENV === 'production',
-            inject: false
+            inject: false,
+            sourceMap: true,
+            config: {
+                path: './postcss.config.js'
+            }
         }),
 
         process.env.NODE_ENV === 'production' && terser(),
