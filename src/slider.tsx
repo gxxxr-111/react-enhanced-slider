@@ -1,6 +1,6 @@
 import React, { useState, useRef, useCallback, ChangeEvent, useEffect } from 'react';
 import { Range, v2p, p2v, correctNumber } from './utils';
-import './styles/globals.css';
+import './styles/slider.css';
 
 interface StepSliderProps {
     range?: Range
@@ -143,7 +143,7 @@ export const Slider: React.FC<StepSliderProps> = ({
     }, [range]);
 
     return (
-        <div className={`relative h-4 w-xs ${className}`}>
+        <div className={`react-slider relative h-4 w-xs ${className}`}>
 
             {/* Slider Track */}
             <div

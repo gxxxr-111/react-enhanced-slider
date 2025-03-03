@@ -40,12 +40,10 @@ export default {
         }),
 
         postcss({
-            extensions: ['.css'],
-            extract: 'dist/styles.css',
-            minimize: true,
-            inject: {
-                insertInto: 'head',
-            },
+            extract: true,
+            modules: false,
+            minimize: process.env.NODE_ENV === 'production',
+            inject: false
         }),
 
         process.env.NODE_ENV === 'production' && terser(),
