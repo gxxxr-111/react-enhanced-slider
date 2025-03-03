@@ -1,5 +1,6 @@
 import React, { useState, useRef, useCallback, ChangeEvent, useEffect } from 'react';
 import { Range, v2p, p2v, correctNumber } from './utils';
+import './index.css';
 
 interface StepSliderProps {
     range?: Range

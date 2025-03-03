@@ -46,7 +46,7 @@ export default {
             inject: false,
             sourceMap: true,
             config: {
-                path: './postcss.config.js'
+                path: './postcss.config.mjs'
             }
         }),
 
