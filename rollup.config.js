@@ -12,18 +12,18 @@ export default {
             file: 'dist/index.cjs.js',
             format: 'cjs',
             sourcemap: true,
-            assetFileNames: 'styles/[name][extname]'
+            assetFileNames: 'dist/[name][extname]',
         },
         {
             file: 'dist/index.esm.js',
             format: 'esm',
             sourcemap: true,
-            assetFileNames: 'styles/[name][extname]'
+            assetFileNames: 'dist/[name][extname]',
         },
     ],
     plugins: [
         postcss({
-            extract: 'dist/index.css',
+            extract: 'index.css',
             modules: false,
             minimize: process.env.NODE_ENV === 'production',
             inject: false,
