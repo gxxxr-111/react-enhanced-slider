@@ -197,8 +197,8 @@ export const Slider: React.FC<StepSliderProps> = ({
                 aria-label="Slider value"
             />
 
-            <div className='m-10'>Internal value: {internalValue}</div>
-            <div className='m-10'>Internal ref value: {internalValueRef.current}</div>
+            {/* <div className='m-10'>Internal value: {internalValue}</div>
+            <div className='m-10'>Internal ref value: {internalValueRef.current}</div> */}
         </div >
     );
 };
