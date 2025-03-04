@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Slider } from "../../src/components";
+import "react-enhanced-slider/dist/index.css";
+import { Slider } from "react-enhanced-slider";
 
 function Home() {
     const [value, setValue] = useState(0);

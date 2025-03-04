@@ -1,0 +1,49 @@
+{
+  "name": "react.nextjs.knowledgebase",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@next/bundle-analyzer": "^15.1.7",
+    "@tailwindcss/oxide": "^4.0.8",
+    "@tailwindcss/postcss": "^4.0.6",
+    "@tailwindcss/typography": "^0.5.13",
+    "@tailwindcss/vite": "^4.0.6",
+    "axios": "^1.7.9",
+    "better-react-mathjax": "^2.1.0",
+    "lucide-react": "^0.475.0",
+    "mysql2": "^3.12.0",
+    "next": "^15.1.7",
+    "pg": "^8.13.3",
+    "postcss-cli": "^11.0.0",
+    "react": "^19.0.0",
+    "react-code-blocks": "^0.1.6",
+    "react-dom": "^19.0.0",
+    "react-enhanced-slider": "file:..",
+    "react-syntax-highlighter": "^15.6.1",
+    "socket.io-client": "^4.7.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "@types/pg": "^8.11.11",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/tailwindcss": "^3.0.11",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.20.1",
+    "eslint-config-next": "^15.1.7",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.8",
+    "typescript": "^5"
+  },
+  "type": "module",
+  "overrides": {
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4"
+  }
+}
