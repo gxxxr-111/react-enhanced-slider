@@ -1,6 +1,6 @@
 {
   "name": "react-enhanced-slider",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "type": "module",
   "description": "Feature-rich slider component for React with step controls, smooth animations and full customization.",
   "repository": {
