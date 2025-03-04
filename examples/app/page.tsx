@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "react-enhanced-slider/dist/index.css";
 import { Slider } from "react-enhanced-slider";
 
@@ -14,27 +14,6 @@ function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [thumbColor, setThumbColor] = useState("#3b82f6"); // 默认蓝色
     const [barColor, setBarColor] = useState("#3b82f6"); // 默认蓝色
-
-    // 处理输入框变化
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const newValue = e.target.value;
-        setInputValue(newValue);
-
-        const numericValue = Number(newValue);
-        if (!isNaN(numericValue)) {
-            setValue(numericValue);
-        }
-    };
-
-    // 处理输入框失焦
-    const handleInputBlur = () => {
-        const numericValue = Number(inputValue);
-        if (isNaN(numericValue)) {
-            setInputValue(value.toString());
-        } else {
-            setValue(numericValue);
-        }
-    };
 
     // 动态调整范围
     useEffect(() => {
