@@ -81,6 +81,7 @@
     "postcss": "^8.5.3",
     "rollup": "^4.34.9",
     "rollup-plugin-import-css": "^3.5.8",
+    "rollup-plugin-minification": "^0.2.0",
     "rollup-plugin-node-externals": "^8.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
